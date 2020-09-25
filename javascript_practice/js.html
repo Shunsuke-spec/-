@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            h1,p {
+                color: red;
+                text-align: center;
+                background: lightgray;
+            }
+            
+            .pagetop {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h1 id="name" style="height: 2000px;">Kawazoe</h1>
+        <!--<p>shunshuke</p>-->
+
+        <a class="pagetop" id="top" href=”#”>TOPに戻る</a>
+        
+        <script>
+            const kawa = document.getElementById('name')
+            
+            kawa.addEventListener("mouseover", () => {
+                
+                
+                const shun = document.createElement('h3');  // <p></p>
+                
+                shun.textContent = "shunshuke";     // <p>shunshuke</p>
+                
+                shun.style.color = "red";
+                shun.style.textAlign = "center";
+                shun.style.background = "lightgray";
+                shun.animate({
+                  opacity: [0, 1]
+                }, 3000)
+                
+                // shun.style.transform = "rotate(360deg)";
+                
+                
+                document.body.appendChild(shun);
+                
+            //   console.log("「はい」がクリックされました");
+            });
+            
+            
+               const topLink = document.getElementById("top");
+
+    window.addEventListener("scroll", () => {
+      const scrollValue = document.scrollingElement.scrollTop;
+
+      if (scrollValue >= 300) {
+
+          topLink.style.display = "inline";
+
+      } else if (scrollValue < 300) {
+
+          topLink.style.display = "none";
+
+      }
+    });
+            
+            
+        </script>
+        
+        
+    </body>
+</html>
